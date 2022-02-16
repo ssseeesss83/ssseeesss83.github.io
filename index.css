@@ -91,19 +91,19 @@ body{
 
 .container .box:nth-child(1)::before,
 .container .box:nth-child(1)::after{
-    background-image: linear-gradient(315deg,#ffbc00,#ff0058);
+    background-image: linear-gradient(315deg,#18c1ff,#ff0058);
 
 }
 
 .container .box:nth-child(2)::before,
 .container .box:nth-child(2)::after{
-    background-image: linear-gradient(315deg,#03a9f4,#7700ff);
+    background-image: linear-gradient(315deg,#f46f03,#00ff62);
     
 }
 
 .container .box:nth-child(3)::before,
 .container .box:nth-child(3)::after{
-    background-image: linear-gradient(315deg,#4dff03,#00ffc8);
+    background-image: linear-gradient(315deg,#8503ff,#fbff00);
     
 }
 
@@ -244,16 +244,86 @@ body{
 }
 
 .three{
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+    left: 0;
+    top:900px;
+    position: absolute;
+
 }
 
 
-#info p{
+#info .glitch{
     z-index: 50;
-    color: #FFF;
-    font-size: 40px;
-    align-items: center;
-    justify-content: center;
+    color: rgba(255,255,255,0.8);
+    font-size: 70px;
+    left: 10%;
+    margin-top: 100px;
+    overflow: visible;
+    position: absolute;
+    letter-spacing: 10px;
+}
+
+#info .glitch::before{
+    content: attr(data-text);
+    position: absolute;
+    text-shadow: 10px 0 rgb(255, 0, 0);
+    left: -4px;
+    clip-path: inset(50px 0 0 0);
+    animation: gli 0.3s infinite linear alternate-reverse;
+    /* background-color: black; */
+}
+
+#info .glitch::after{
+    content: attr(data-text);
+    position: absolute;
+    text-shadow: -10px 0 rgb(0, 204, 255);
+    right: 4px;
+    animation: gli 0.3s infinite linear alternate-reverse;
+    clip-path: inset(-50px 50px 0 0);
+    animation-delay: 0.17s;
+    /* background-color: black; */
+}
+
+@keyframes gli{
+    0%{
+        clip-path: inset(-70px 31px -40px 75px);
+        transform:scaleX(0.4);
+        transform:scaleY(1.5);
+    }
+    25%{
+        clip-path: inset(30px -68px 95px -23px);
+        transform:scaleX(0.4);
+        transform:scaleY(0.5);
+    }
+    50%{
+        clip-path: inset(-75px 21px 31px 70px);
+        transform:scaleX(1.7);
+        transform:scaleY(1.4);
+    }
+    75%{
+        clip-path: inset(-20px -85px 81px 31px);
+        transform:scaleX(0.5);
+        transform:scaleY(0.3);
+    }
+    100%{
+        clip-path: inset(84px 25px -23px -81px);
+        transform:scaleX(1);
+        transform:scaleY(1.4);
+    }
+}
+
+#gif{
+    right: 0;
+    top: 900px;
+    position: absolute;
+    z-index: -10;
+}
+
+#gif::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top:0;
+    right:0;
+    box-shadow: 0 0 150px 150px black inset;
 }
