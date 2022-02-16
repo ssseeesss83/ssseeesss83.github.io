@@ -312,8 +312,7 @@ body{
 }
 
 #gif{
-    right: 0;
-    top: 900px;
+    top: 0;
     position: absolute;
     z-index: -10;
 }
